@@ -6,9 +6,9 @@ class User {
   User({this.userid, this.username, this.password});
 
   User.fromMap(dynamic obj) {
-    this.userid = obj['userid'];
-    this.username = obj['username'];
-    this.password = obj['password'];
+    userid = obj['userid'];
+    username = obj['username'];
+    password = obj['password'];
   }
 
   Map<String, dynamic> toMap() {

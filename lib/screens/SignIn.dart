@@ -20,6 +20,7 @@ class _SigninState extends State<Signin> {
   final passwordFocus = FocusNode();
   var _isObsecured;
 
+  @override
   void initState() {
     super.initState();
     _isObsecured = true;
@@ -33,8 +34,8 @@ class _SigninState extends State<Signin> {
           child: Column(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: 25, bottom: 25),
-                child: Text(
+                margin: const EdgeInsets.only(top: 25, bottom: 25),
+                child: const Text(
                   "Menu Sign In",
                   style: TextStyle(fontSize: 32),
                 ),
@@ -44,11 +45,11 @@ class _SigninState extends State<Signin> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: 25, bottom: 25),
+                      margin: const EdgeInsets.only(top: 25, bottom: 25),
                       child: TextFormField(
                         enabled: true,
                         controller: usernamefield,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
                           errorBorder: OutlineInputBorder(
@@ -67,12 +68,12 @@ class _SigninState extends State<Signin> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 25, bottom: 25),
+                      margin: const EdgeInsets.only(top: 25, bottom: 25),
                       child: TextFormField(
                         enabled: true,
                         controller: passwordfield,
                         obscureText: _isObsecured,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
                           errorBorder: OutlineInputBorder(
@@ -105,16 +106,17 @@ class _SigninState extends State<Signin> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Welcome()));
+                                      builder: (context) => const Welcome()));
                             } else {
                               Widget okButton = TextButton(
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Text('OK'));
+                                  child: const Text('OK'));
                               AlertDialog alert = AlertDialog(
-                                title: Text("Error"),
-                                content: Text("Username atau Password Salah"),
+                                title: const Text("Error"),
+                                content:
+                                    const Text("Username atau Password Salah"),
                                 actions: [okButton],
                               );
                               showDialog(
@@ -125,7 +127,7 @@ class _SigninState extends State<Signin> {
                             }
                           }
                         },
-                        child: Text('Login')),
+                        child: const Text('Login')),
                   ],
                 ),
               ),
@@ -136,10 +138,10 @@ class _SigninState extends State<Signin> {
                         onPressed: () {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                                return Signup();
-                              }));
+                            return const Signup();
+                          }));
                         },
-                        child: Text("Sign Up"))
+                        child: const Text("Sign Up"))
                   ],
                 ),
               ),

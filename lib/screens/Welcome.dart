@@ -15,19 +15,19 @@ class _WelcomeState extends State<Welcome> {
       body: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(top: 100),
+            margin: const EdgeInsets.only(top: 100),
             alignment: Alignment.center,
-            padding: EdgeInsets.only(top: 25),
-            child: Text("Anda Berhasil Login"),
+            padding: const EdgeInsets.only(top: 25),
+            child: const Text("Anda Berhasil Login"),
           ),
           Container(
-              padding: EdgeInsets.only(top: 25),
+              padding: const EdgeInsets.only(top: 25),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => Signin()));
+                      MaterialPageRoute(builder: (context) => const Signin()));
                 },
-                child: Text("Log Out"),
+                child: const Text("Log Out"),
               ))
         ],
       ),

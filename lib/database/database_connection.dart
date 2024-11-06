@@ -24,8 +24,7 @@ class DatabaseConnection {
     Directory dataDirectory = await getApplicationDocumentsDirectory();
     String dbPath = join(dataDirectory.path, databaseName);
 
-    return await openDatabase(dbPath,
-        version: versi, onCreate: await _onCreate);
+    return await openDatabase(dbPath, version: versi, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {

@@ -22,6 +22,7 @@ class _SignupState extends State<Signup> {
   var _isObsecured;
   var _isOser;
 
+  @override
   void initState() {
     super.initState();
     _isObsecured = true;
@@ -36,8 +37,8 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: 25, bottom: 25),
-                child: Text(
+                margin: const EdgeInsets.only(top: 25, bottom: 25),
+                child: const Text(
                   "Menu Sign Up",
                   style: TextStyle(fontSize: 32),
                 ),
@@ -47,11 +48,11 @@ class _SignupState extends State<Signup> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: 25, bottom: 25),
+                      margin: const EdgeInsets.only(top: 25, bottom: 25),
                       child: TextFormField(
                         enabled: true,
                         controller: usernamefield,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
                           errorBorder: OutlineInputBorder(
@@ -62,7 +63,7 @@ class _SignupState extends State<Signup> {
                           labelText: "Username",
                         ),
                         validator: (value) {
-                          if (value == null || value!.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             usernameFocus.requestFocus();
                             return "Username tidak boleh kosong";
                           }
@@ -71,13 +72,13 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 25, bottom: 25),
+                      margin: const EdgeInsets.only(top: 25, bottom: 25),
                       child: TextFormField(
                         enabled: true,
                         controller: passwordfield,
                         obscureText: _isObsecured,
                         focusNode: passwordFocus,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
                           errorBorder: OutlineInputBorder(
@@ -88,7 +89,7 @@ class _SignupState extends State<Signup> {
                           labelText: "Password",
                         ),
                         validator: (value) {
-                          if (value == null || value!.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             passwordFocus.requestFocus();
                             return "Password wajib di isi";
                           }
@@ -97,7 +98,7 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 25, bottom: 25),
+                      margin: const EdgeInsets.only(top: 25, bottom: 25),
                       child: TextFormField(
                         enabled: true,
                         controller: passwordvalidationfield,
@@ -114,7 +115,7 @@ class _SignupState extends State<Signup> {
                           labelText: "Password Confirmation",
                         ),
                         validator: (value) {
-                          if (value == null || value!.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             passwordFocus.requestFocus();
                             return "Password wajib di isi";
                           }
@@ -143,10 +144,10 @@ class _SignupState extends State<Signup> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Signin()));
+                                  builder: (context) => const Signin()));
                         }
                       },
-                      child: Text("Bikin Akun"),
+                      child: const Text("Bikin Akun"),
                     ),
                   ],
                 ),
@@ -158,10 +159,10 @@ class _SignupState extends State<Signup> {
                         onPressed: () {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                                return Signin();
-                              }));
+                            return const Signin();
+                          }));
                         },
-                        child: Text("Sign In"))
+                        child: const Text("Sign In"))
                   ],
                 ),
               ),
